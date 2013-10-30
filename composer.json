@@ -2,7 +2,7 @@
     "name": "teo/core-bundle",
     "type": "symfony-bundle",
     "description": "Symfony core website bundle",
-    "keywords": ["biolerplate", "sitemap"],
+    "keywords": ["boilerplate", "sitemap"],
     "homepage": "https://github.com/matteocaberlotto",
     "license": "MIT",
     "authors": [
