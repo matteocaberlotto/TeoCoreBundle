@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ website.title }}{% endblock %}
+
+{% block facebook_meta %}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('homepage') }}">
+    <meta property="og:title" content="{{ website.title }}">
+    <meta property="og:description" content="{{ website.description }}">
+    <meta property="og:image" content="{{ url('homepage') ~ website.og_image }}">
+{% endblock %}
+
+{% block meta %}
+    {{ parent() }}
+    <link rel="canonical" href="{{ url('homepage') }}">
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+    {% javascripts
+        '@TeoCoreBundle/Resources/public/js/jquery.cookie.js'
+        '@TeoCoreBundle/Resources/public/js/jquery.transform.js'
+        '@TeoCoreBundle/Resources/public/js/jquery.pte.js'
+        '@TeoCoreBundle/Resources/public/js/jquery.ganalytics.js'
+        '@TeoCoreBundle/Resources/public/js/slidzor.js'
+        '@TeoCoreBundle/Resources/public/js/basePage.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
